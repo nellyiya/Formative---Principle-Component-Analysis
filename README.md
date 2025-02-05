@@ -1,92 +1,41 @@
+# Principal Component Analysis (PCA) - Formative 1
 
+## Overview
+This project demonstrates the application of Principal Component Analysis (PCA) for dimensionality reduction and visualization. The notebook `PCA_formative.ipynb` contains data preprocessing, variance explanation, PCA transformation, and visualization of results.
 
-# Fuel Economy Dataset
+## Features
+- **Data Handling:** Identifies and processes non-numeric data using encoding and imputation techniques.
+- **Explained Variance Calculation:** Computes eigenvalues, sorts them in descending order, and selects principal components based on explained variance.
+- **Visualization:** Plots data before and after PCA transformation with correctly labeled axes.
+- **Manual Calculation:** Includes eigenvector calculations and an explanation of PCA’s effects.
 
-## Overview  
+## Files
+- `PCA_formative.ipynb` - Jupyter Notebook implementing PCA step by step.
+- `fuel_econ.csv` - Dataset.
+-  `README.md` - Project documentation.
 
-This dataset contains standardized and normalized values of various vehicle attributes related to fuel economy, emissions, and performance. The dataset consists of **3,929 records** with **14 features** and has been processed to ensure consistency and usability for analysis and machine learning applications.  
-
-## Dataset Description  
-
-The dataset includes the following columns:  
-
-- **id**: Unique identifier for each vehicle entry (standardized).  
-- **year**: Model year of the vehicle (normalized).  
-- **cylinders**: Number of cylinders in the engine (normalized).  
-- **displ**: Engine displacement in liters (normalized).  
-- **pv2**: Power-to-weight ratio (normalized).  
-- **pv4**: Another power-related variable (normalized).  
-- **city**: City fuel economy in miles per gallon (MPG) (normalized).  
-- **UCity**: Urban fuel economy (normalized).  
-- **highway**: Highway fuel economy in MPG (normalized).  
-- **UHighway**: Urban highway fuel economy (normalized).  
-- **comb**: Combined fuel economy (normalized).  
-- **co2**: CO2 emissions in grams per mile (normalized).  
-- **feScore**: Fuel economy score based on efficiency (normalized).  
-- **ghgScore**: Greenhouse gas emissions score (normalized).  
-
-## Data Preprocessing  
-
-The dataset has been preprocessed to ensure that numerical values are properly scaled and standardized:  
-
-1. **Handling Missing Values**: Any missing data points were either imputed or removed to maintain dataset integrity.  
-2. **Normalization**: Features were normalized to a range where the **mean = 0** and **standard deviation = 1** using **Min-Max Scaling** or **Z-score Normalization**.  
-3. **Feature Engineering**: Derived or transformed variables were created where necessary.  
-4. **Data Cleaning**: Non-numeric categorical variables were excluded or converted into numerical representations.  
-
-### Code Implementation  
-
-The dataset preprocessing and analysis were implemented using **Python** and the following libraries:  
-- `pandas` for data manipulation  
-- `numpy` for numerical operations  
-- `matplotlib` and `seaborn` for visualization  
-- `scikit-learn` for preprocessing and machine learning  
-
-#### Data Loading and Exploration  
-```python
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-# Load the dataset
-df = pd.read_csv("fuel_econ.csv")
-
-# Display the first few rows
-print(df.head())
-
-# Check for missing values
-print(df.isnull().sum())
+## Requirements
+To run the notebook, install the required dependencies using:
+```bash
+pip install numpy pandas matplotlib scikit-learn
 ```
 
-#### Data Normalization  
-```python
-from sklearn.preprocessing import StandardScaler
-
-# Selecting numeric columns for normalization
-numeric_cols = ['year', 'cylinders', 'displ', 'pv2', 'pv4', 'city', 'UCity', 
-                'highway', 'UHighway', 'comb', 'co2', 'feScore', 'ghgScore']
-
-scaler = StandardScaler()
-df[numeric_cols] = scaler.fit_transform(df[numeric_cols])
-
-print(df.describe())  # Check statistics after normalization
+## Running the Notebook
+1. Open the Jupyter Notebook:
+```bash
+jupyter notebook PCA_formative.ipynb
 ```
+2. Execute the cells step by step to see PCA in action.
 
-#### Visualization of Fuel Economy Distribution  
-```python
-plt.figure(figsize=(10,6))
-sns.histplot(df['comb'], bins=30, kde=True, color='blue')
-plt.xlabel("Combined Fuel Economy (Normalized)")
-plt.ylabel("Frequency")
-plt.title("Distribution of Combined Fuel Economy")
-plt.show()
-```
+## Results
+- Displays variance contribution of each principal component.
+- Transformed dataset with reduced dimensions.
+- Graphical comparison before and after PCA application.
 
-## Usage  
+## Contributors
+1.Kanisa
+2.Nelly
 
-This dataset can be used for:  
-- **Analyzing fuel economy trends** across different vehicle models  
-- **Predicting vehicle emissions and efficiency scores** based on input attributes  
-- **Machine learning applications** for optimizing fuel efficiency and minimizing emissions  
-- **Policy recommendations** for sustainable and eco-friendly vehicle choices  
+
+
+
