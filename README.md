@@ -12,6 +12,7 @@ This project demonstrates the application of Principal Component Analysis (PCA) 
 ## Files
 - `PCA_formative.ipynb` - Jupyter Notebook implementing PCA step by step.
 - `fuel_econ.csv` - Dataset.
+- `Matrix_PeerPair13` -screenshots
 -  `README.md` - Project documentation.
 
 ## Requirements
