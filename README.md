@@ -34,7 +34,8 @@ jupyter notebook PCA_formative.ipynb
 - Graphical comparison before and after PCA application.
 
 ## Contributors
-1.Kanisa
+1.Kanisa.
+
 2.Nelly
 
 
